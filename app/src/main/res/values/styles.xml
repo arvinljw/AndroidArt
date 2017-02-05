@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/background</item>
+
+        <!--　&lt;!&ndash;设置switchButton样式&ndash;&gt;-->
+        <!--<item name="colorControlActivated">@color/color_green</item>-->
+        <!--<item name="colorSwitchThumbNormal">@color/white_normal</item>-->
+        <!--<item name="android:colorForeground">@color/white_normal</item>-->
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="main_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/spacing_default</item>
+        <item name="android:textColor">@color/black_normal</item>
+        <item name="android:textSize">@dimen/txt_normal_content</item>
+        <item name="android:background">@drawable/bg_item</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

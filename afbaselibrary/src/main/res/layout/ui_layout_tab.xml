@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <net.arvin.afbaselibrary.widgets.PagerSlidingTabStrip
+        android:id="@id/pre_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_avatar"
+        android:background="@color/white_normal" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pre_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

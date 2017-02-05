@@ -1,0 +1,95 @@
+package net.arvin.afbaselibrary.uis.fragments;
+
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+
+import net.arvin.afbaselibrary.R;
+import net.arvin.afbaselibrary.listeners.ITabContent;
+import net.arvin.afbaselibrary.listeners.ITabPager;
+import net.arvin.afbaselibrary.uis.activities.BaseHeaderActivity;
+import net.arvin.afbaselibrary.uis.adapters.TabPagerAdapter;
+import net.arvin.afbaselibrary.utils.ScreenUtil;
+import net.arvin.afbaselibrary.widgets.PagerSlidingTabStrip;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * created by arvin on 16/11/21 17:54
+ * email：1035407623@qq.com
+ */
+public abstract class BaseTabFragment<T extends ITabPager> extends BaseFragment implements ViewPager.OnPageChangeListener, ITabContent {
+    protected PagerSlidingTabStrip mTabLayout;
+    protected ViewPager mPager;
+    protected List<T> mItems = new ArrayList<>();
+    protected TabPagerAdapter<T> mAdapter;
+    protected int selectedIndex = -1;
+
+    @Override
+    public void init(Bundle savedInstanceState) {
+        mTabLayout = getView(R.id.pre_tab_layout);
+        mPager = getView(R.id.pre_pager);
+        initTabView();
+        getData();
+    }
+
+    private void initTabView() {
+        mTabLayout.setTextColor(getTabTextColor());
+        mTabLayout.setSelectedTextColorResource(getSelectedTabTextColor());
+        mTabLayout.setIndicatorColorResource(getSelectedTabTextColor());
+        mTabLayout.setIndicatorHeight(ScreenUtil.dp2px(2));
+        mTabLayout.setUnderlineColor(getResources().getColor(R.color.black_divider));
+        mTabLayout.setUnderlineHeight(ScreenUtil.dp2px(getUnderLineHeight()));
+        mTabLayout.setDrawDivider(isDrawDivider());
+        mTabLayout.setTabAddWay(getItemAddWay());
+    }
+
+    protected float getUnderLineHeight() {
+        return 1;
+    }
+
+    protected void initPager() {
+        if (mItems == null || mItems.size() == 0) {
+            return;
+        }
+        mAdapter = new TabPagerAdapter<>(getChildFragmentManager(), mItems, this);
+        mPager.setAdapter(mAdapter);
+        mPager.setOffscreenPageLimit(mItems.size());
+        mTabLayout.setViewPager(mPager);
+        mTabLayout.setOnPageChangeListener(this);
+    }
+
+    protected boolean isDrawDivider() {
+        return false;
+    }
+
+    protected int getSelectedTabTextColor() {
+        return R.color.colorPrimary;
+    }
+
+    protected int getTabTextColor() {
+        return R.color.black_normal;
+    }
+
+    protected PagerSlidingTabStrip.TabAddWay getItemAddWay() {
+        return PagerSlidingTabStrip.TabAddWay.ITEM_WARP;
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        selectedIndex = position;
+    }
+
+    /**
+     * 获取完数据后回调设置pager
+     */
+    protected abstract void getData();
+}

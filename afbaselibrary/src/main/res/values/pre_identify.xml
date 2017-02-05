@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 预定义ID -->
+    <item name="pre_tv_title" type="id"/>
+    <item name="pre_v_back" type="id"/>
+    <item name="pre_tab_layout" type="id"/>
+    <item name="pre_pager" type="id"/>
+    <item name="pre_refresh" type="id"/>
+    <item name="pre_recycler_view" type="id"/>
+    <item name="pre_web_view" type="id"/>
+
+    <!--color-->
+    <item name="colorPrimary" type="color" />
+    <item name="colorAccent" type="color" />
+    <item name="background" type="color" />
+
+</resources>
