@@ -8,7 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/BaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +19,7 @@
         </activity>
 
         <!--隐式intent匹配分析-->
-        <activity android:name=".intent.IntentActivity"/>
+        <activity android:name=".intent.IntentActivity" />
         <activity android:name=".intent.SecondActivity">
             <intent-filter>
                 <action android:name="SecondActivityAction" />
@@ -41,10 +43,13 @@
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="FourActivityAction" />
+
                 <data
-                    android:scheme="https" android:mimeType="image/*"/>
+                    android:mimeType="image/*"
+                    android:scheme="https" />
                 <data
-                    android:scheme="http" android:mimeType="text/*"/>
+                    android:mimeType="text/*"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
     </application>

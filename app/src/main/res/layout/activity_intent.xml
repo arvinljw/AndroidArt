@@ -4,27 +4,34 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/spacing_default"
     android:orientation="vertical"
-    tools:context="net.arvin.androidart.MainActivity">
+    tools:context="net.arvin.androidart.intent.IntentActivity">
 
-    <TextView
-        style="@style/main_text"
-        android:id="@+id/toSec"
-        android:text="To SecondActivity" />
+    <include layout="@layout/layout_header" />
 
-    <include layout="@layout/ui_layout_divider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_default"
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/main_text"
-        android:id="@+id/toThi"
-        android:text="To ThirdActivity" />
+        <TextView
+            android:id="@+id/toSec"
+            style="@style/main_text"
+            android:text="To SecondActivity" />
 
-    <include layout="@layout/ui_layout_divider" />
+        <include layout="@layout/ui_layout_divider" />
 
-    <TextView
-        style="@style/main_text"
-        android:id="@+id/toFour"
-        android:text="To FourthActivity" />
+        <TextView
+            android:id="@+id/toThi"
+            style="@style/main_text"
+            android:text="To ThirdActivity" />
 
+        <include layout="@layout/ui_layout_divider" />
+
+        <TextView
+            android:id="@+id/toFour"
+            style="@style/main_text"
+            android:text="To FourthActivity" />
+    </LinearLayout>
 </LinearLayout>

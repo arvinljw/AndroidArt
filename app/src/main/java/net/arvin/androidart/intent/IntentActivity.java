@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import net.arvin.afbaselibrary.uis.activities.BaseActivity;
+import net.arvin.afbaselibrary.uis.activities.BaseSwipeBackActivity;
 import net.arvin.androidart.R;
 
 import butterknife.OnClick;
@@ -12,7 +13,7 @@ import butterknife.OnClick;
 /**
  * 隐式intent匹配分析
  */
-public class IntentActivity extends BaseActivity {
+public class IntentActivity extends BaseSwipeBackActivity {
 
     @Override
     public int getContentViewId() {
@@ -20,7 +21,12 @@ public class IntentActivity extends BaseActivity {
     }
 
     @Override
-    public void init(Bundle savedInstanceState) {
+    protected String getTitleText() {
+        return "Intent分析";
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
     }
 
     @OnClick(R.id.toSec)
@@ -55,10 +61,10 @@ public class IntentActivity extends BaseActivity {
         Intent intent = new Intent();
         intent.setAction("FourActivityAction");
 //        intent.setData(Uri.parse("http://"));//只保留这个注释，发现若是过滤器中URI和MIME都设置了，则intent中也要设置URI和MIME
-        intent.setDataAndType(Uri.parse("http://"),"image/png");
-        intent.setDataAndType(Uri.parse("https://"),"image/png");
-        intent.setDataAndType(Uri.parse("https://"),"text/*");
-        intent.setDataAndType(Uri.parse("http://"),"text/*");
+        intent.setDataAndType(Uri.parse("http://"), "image/png");
+        intent.setDataAndType(Uri.parse("https://"), "image/png");
+        intent.setDataAndType(Uri.parse("https://"), "text/*");
+        intent.setDataAndType(Uri.parse("http://"), "text/*");
         //以上四个发现只要intent中设置的URI结构和MIME只要在过滤器中包含了，即可通过
         //结论：只要过滤器中的URI结构和MIME在intent中能找到对应的URI和MIME就可以，URI结构的匹配是过滤器中有什么，intent中就必须有什么才能匹配通过
         startActivity(intent);

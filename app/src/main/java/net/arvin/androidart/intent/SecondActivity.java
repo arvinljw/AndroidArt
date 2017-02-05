@@ -20,6 +20,7 @@ public class SecondActivity extends BaseSwipeBackActivity {
 
     @Override
     public void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
         tvName.setText(getActivityName());
     }
 

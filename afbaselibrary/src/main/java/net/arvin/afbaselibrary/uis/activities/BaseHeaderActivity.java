@@ -11,7 +11,7 @@ import net.arvin.afbaselibrary.R;
 /**
  * created by arvin on 16/10/24 15:22
  * email：1035407623@qq.com
- * activity必须包含ui_layout_header.xml文件,或者使用id:pre_tv_title和pre_v_back
+ * 带有标题和返回按钮的activity包含使用id:pre_tv_title（TextView）和pre_v_back（View）的组件即可
  */
 public abstract class BaseHeaderActivity extends BaseActivity {
     protected TextView tvTitle;
@@ -45,9 +45,14 @@ public abstract class BaseHeaderActivity extends BaseActivity {
                     onBackPressed();
                 }
             });
+            vBack.setVisibility(isShowBackView() ? View.VISIBLE : View.GONE);
         } catch (Exception e) {
             Logger.w("未设置返回图标id~");
         }
+    }
+
+    protected boolean isShowBackView() {
+        return true;
     }
 
     protected void onTitleClicked(View view) {
