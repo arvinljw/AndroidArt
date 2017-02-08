@@ -1,11 +1,11 @@
 package net.arvin.androidart;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Toast;
 
-import net.arvin.afbaselibrary.uis.activities.BaseActivity;
 import net.arvin.afbaselibrary.uis.activities.BaseHeaderActivity;
 import net.arvin.androidart.intent.IntentActivity;
+import net.arvin.androidart.toast.ToastActivity;
 
 import butterknife.OnClick;
 
@@ -28,12 +28,16 @@ public class MainActivity extends BaseHeaderActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-
     }
 
     @OnClick(R.id.tv_intent_analyze)
-    public void toSec() {
+    public void toIntentAnalyze() {
         startActivity(IntentActivity.class);
+    }
+
+    @OnClick(R.id.tv_custom_toast)
+    public void toToast() {
+        startActivity(ToastActivity.class);
     }
 
     /**

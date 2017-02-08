@@ -52,6 +52,9 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
+
+        <!--自定义Toast-->
+        <activity android:name=".toast.ToastActivity" />
     </application>
 
 </manifest>

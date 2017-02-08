@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_default">
+
+        <EditText
+            android:id="@+id/ed_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入Toast文字"
+            android:paddingBottom="@dimen/spacing_small"
+            android:paddingTop="@dimen/spacing_small" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示位置："
+                android:textColor="@color/black_normal"
+                android:textSize="@dimen/txt_normal_content" />
+
+            <RadioGroup
+                android:id="@+id/rg_gravity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rb_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="顶部" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rb_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_default"
+                    android:layout_marginRight="@dimen/spacing_default"
+                    android:text="中间" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rb_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="底部" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示时间："
+                android:textColor="@color/black_normal"
+                android:textSize="@dimen/txt_normal_content" />
+
+            <RadioGroup
+                android:id="@+id/rg_during"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rb_short"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="短    " />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/rb_long"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_default"
+                    android:minWidth="28sp"
+                    android:text="长    " />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/bg_item"
+            android:gravity="center"
+            android:padding="@dimen/spacing_default"
+            android:text="显示"
+            android:textColor="@color/black_normal"
+            android:textSize="@dimen/txt_sub_title" />
+
+    </LinearLayout>
+
+</LinearLayout>

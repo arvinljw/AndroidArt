@@ -19,5 +19,12 @@
             android:id="@+id/tv_intent_analyze"
             style="@style/main_text"
             android:text="Intent分析" />
+
+        <include layout="@layout/ui_layout_divider" />
+
+        <TextView
+            android:id="@+id/tv_custom_toast"
+            style="@style/main_text"
+            android:text="自定义Toast" />
     </LinearLayout>
 </LinearLayout>
