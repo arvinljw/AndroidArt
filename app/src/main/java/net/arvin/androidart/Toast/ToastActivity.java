@@ -2,6 +2,7 @@ package net.arvin.androidart.toast;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,6 +81,13 @@ public class ToastActivity extends BaseSwipeBackActivity implements RadioGroup.O
     @OnClick(R.id.tv_show)
     public void TopShowToast() {
         makeText().show();
+//        new Thread(new Runnable() {//显示有问题的
+//            @Override
+//            public void run() {
+//                Looper.prepare();
+//                showToast("子线程的Toast");
+//            }
+//        }).start();
     }
 
     private Toast makeText() {

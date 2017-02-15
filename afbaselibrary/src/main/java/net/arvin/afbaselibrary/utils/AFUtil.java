@@ -1,6 +1,7 @@
 package net.arvin.afbaselibrary.utils;
 
 import android.annotation.TargetApi;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -81,5 +82,20 @@ public class AFUtil {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("content://com.android.calendar/time"));
         context.startActivity(intent);
+    }
+
+    /**
+     * 获取当前进程的名字
+     */
+    public static String getProcessName(Context context) {
+        int pid = android.os.Process.myPid();
+        String processName = "";
+        ActivityManager manager = (ActivityManager) context.getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo process : manager.getRunningAppProcesses()) {
+            if (process.pid == pid) {
+                processName = process.processName;
+            }
+        }
+        return processName;
     }
 }

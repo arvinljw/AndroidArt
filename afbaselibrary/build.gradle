@@ -43,5 +43,5 @@ dependencies {
     compile 'com.orhanobut:logger:1.15'
     //数据库
     compile 'de.greenrobot:greendao:2.1.0'
-    compile 'com.umeng.analytics:analytics:latest.integration'
+//    compile 'com.umeng.analytics:analytics:latest.integration'
 }

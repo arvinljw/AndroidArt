@@ -26,5 +26,11 @@
             android:id="@+id/tv_custom_toast"
             style="@style/main_text"
             android:text="自定义Toast" />
+        <include layout="@layout/ui_layout_divider" />
+
+        <TextView
+            android:id="@+id/tv_multi_process"
+            style="@style/main_text"
+            android:text="多进程通信" />
     </LinearLayout>
 </LinearLayout>

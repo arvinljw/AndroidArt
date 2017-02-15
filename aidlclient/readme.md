@@ -1,0 +1,1 @@
+这是客户端的代码，服务端的代码请查看app中net.arvin.androidart.multiProcess和aidl文件下的内容，具体讲解看博客

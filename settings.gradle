@@ -1,1 +1,1 @@
-include ':app', ':afbaselibrary'
+include ':app', ':afbaselibrary', ':aidlclient'

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidArt.iml" filepath="$PROJECT_DIR$/AndroidArt.iml" />
       <module fileurl="file://$PROJECT_DIR$/afbaselibrary/afbaselibrary.iml" filepath="$PROJECT_DIR$/afbaselibrary/afbaselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

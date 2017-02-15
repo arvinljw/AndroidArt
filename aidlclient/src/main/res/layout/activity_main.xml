@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_default">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_num1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="num1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right|center"
+            android:text="+"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/et_num2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="num2" />
+
+        <EditText
+            android:id="@+id/edit_show_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:editable="false"
+            android:gravity="center"
+            android:hint="result" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_four"
+        android:background="@drawable/bg_item"
+        android:gravity="center"
+        android:padding="@dimen/spacing_default"
+        android:text="远程计算"
+        android:textColor="@color/black_normal"
+        android:textSize="@dimen/txt_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_default"
+        android:text="人物统计"
+        android:textColor="@color/black_secondary"
+        android:textSize="@dimen/txt_sub_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_four"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="姓名" />
+
+        <EditText
+            android:id="@+id/ed_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="年龄"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_four"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item"
+            android:gravity="center"
+            android:padding="@dimen/spacing_default"
+            android:text="添加"
+            android:textColor="@color/black_normal"
+            android:textSize="@dimen/txt_title" />
+
+        <TextView
+            android:id="@+id/btn_select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_weight="1"
+            android:background="@drawable/bg_item"
+            android:gravity="center"
+            android:padding="@dimen/spacing_default"
+            android:text="查询"
+            android:textColor="@color/black_normal"
+            android:textSize="@dimen/txt_title" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_person_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_secondary"
+        android:textSize="@dimen/txt_sub_title" />
+
+</LinearLayout>

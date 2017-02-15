@@ -7,8 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.umeng.analytics.MobclickAgent;
-
 import net.arvin.afbaselibrary.R;
 import net.arvin.afbaselibrary.listeners.ICheckPerm;
 import net.arvin.afbaselibrary.mvp.presenters.BasePresenter;
@@ -35,13 +33,13 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+//        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
+//        MobclickAgent.onPause(this);
     }
 
     @Override
