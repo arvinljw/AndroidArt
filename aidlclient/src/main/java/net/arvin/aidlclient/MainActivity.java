@@ -72,6 +72,7 @@ public class MainActivity extends BaseActivity {
             iIntegerAdd = null;
         }
     };
+    private BinderPool mBinderPool;
 
     @Override
     public int getContentViewId() {
@@ -80,23 +81,30 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void init(Bundle savedInstanceState) {
+        mBinderPool = BinderPool.getInstance(this);
         bind();
         bindPersonCount();
     }
 
+
     private void bind() {
-        Intent intent = new Intent();
-        intent.setComponent(new ComponentName("net.arvin.androidart",
-                "net.arvin.androidart.multiProcess.IntegerAddService"));
-        bindService(intent, conn, Context.BIND_AUTO_CREATE);
+//        Intent intent = new Intent();
+//        intent.setComponent(new ComponentName("net.arvin.androidart",
+//                "net.arvin.androidart.multiProcess.IntegerAddService"));
+//        bindService(intent, conn, Context.BIND_AUTO_CREATE);
+
+        iIntegerAdd = IIntegerAdd.Stub.asInterface(mBinderPool.queryBinder(BinderPool.BINDER_COMPUTE));
     }
 
     private void bindPersonCount() {
-        Intent intent = new Intent();
-        intent.setComponent(new ComponentName("net.arvin.androidart",
-                "net.arvin.androidart.multiProcess.PersonCountService"));
-        bindService(intent, connPerson, Context.BIND_AUTO_CREATE);
+//        Intent intent = new Intent();
+//        intent.setComponent(new ComponentName("net.arvin.androidart",
+//                "net.arvin.androidart.multiProcess.PersonCountService"));
+//        bindService(intent, connPerson, Context.BIND_AUTO_CREATE);
+
+        iPersonCount = IPersonCount.Stub.asInterface(mBinderPool.queryBinder(BinderPool.BINDER_PERSON_COUNT));
     }
+
 
     @OnClick(R.id.btn_count)
     public void calculateResult() {

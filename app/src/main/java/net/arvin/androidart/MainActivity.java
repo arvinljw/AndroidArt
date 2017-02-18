@@ -1,5 +1,6 @@
 package net.arvin.androidart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -46,7 +47,9 @@ public class MainActivity extends BaseHeaderActivity {
 
     @OnClick(R.id.tv_multi_process)
     public void toMultiProcess() {
-        startActivity(ProcessActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt(ProcessActivity.KEY_1, App.count);
+        startActivity(ProcessActivity.class, bundle);
     }
 
     /**

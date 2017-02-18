@@ -20,6 +20,8 @@ import butterknife.BindView;
  * email：1035407623@qq.com
  */
 public class ProcessActivity extends BaseSwipeBackActivity {
+    public static final String KEY_1 = "KEY_1";
+
     @BindView(R.id.tv_service_start_status)
     TextView tvStatus;
     private ServiceConnection conn = new ServiceConnection() {
@@ -45,7 +47,8 @@ public class ProcessActivity extends BaseSwipeBackActivity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        Log.d("ProcessActivity", "count is " + App.count);
+        Log.d("ProcessActivity", "remote count is " + App.count);
+        Log.d("ProcessActivity", "from MainActivity count is " + getIntent().getExtras().getInt(KEY_1));
         //和MainActivity打印的对比可以知道，对于每个进程，都创建了一份自己的内存空间，所以同一个变量，在内存中都有着自己的值
         bindService(new Intent(this, IntegerAddService.class), conn, Context.BIND_AUTO_CREATE);
 
