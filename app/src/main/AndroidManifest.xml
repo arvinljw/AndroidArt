@@ -76,6 +76,8 @@
             android:exported="true"
             android:process=":remote" />
 
+        <!--属性动画-->
+        <activity android:name=".anim.AnimActivity" />　
 
     </application>
 

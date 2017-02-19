@@ -180,6 +180,7 @@ public class MainActivity extends BaseActivity {
 
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(conn);
+//        unbindService(conn);
+//        unbindService(connPerson);
     }
 }

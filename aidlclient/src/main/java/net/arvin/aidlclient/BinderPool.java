@@ -22,7 +22,7 @@ public class BinderPool {
 
     private Context mContext;
     private IBinderPool mBinderPool;
-    private static volatile BinderPool sInstance;
+    private static BinderPool sInstance;
 
     private BinderPool(Context context) {
         mContext = context.getApplicationContext();
