@@ -78,6 +78,8 @@
 
         <!--属性动画-->
         <activity android:name=".anim.AnimActivity" />　
+        <!--消息机制-->
+        <activity android:name=".handler.HandlerActivity" />　
 
     </application>
 

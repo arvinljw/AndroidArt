@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import net.arvin.afbaselibrary.uis.activities.BaseHeaderActivity;
 import net.arvin.androidart.anim.AnimActivity;
+import net.arvin.androidart.handler.HandlerActivity;
 import net.arvin.androidart.intent.IntentActivity;
 import net.arvin.androidart.multiProcess.ProcessActivity;
 import net.arvin.androidart.toast.ToastActivity;
@@ -56,6 +57,11 @@ public class MainActivity extends BaseHeaderActivity {
     @OnClick(R.id.tv_anim)
     public void toAnim() {
         startActivity(AnimActivity.class);
+    }
+
+    @OnClick(R.id.tv_handler)
+    public void toHandler() {
+        startActivity(HandlerActivity.class);
     }
 
     /**

@@ -45,6 +45,13 @@
                 style="@style/main_text"
                 android:text="属性动画" />
 
+            <include layout="@layout/ui_layout_divider" />
+
+            <TextView
+                android:id="@+id/tv_handler"
+                style="@style/main_text"
+                android:text="消息机制" />
+
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
