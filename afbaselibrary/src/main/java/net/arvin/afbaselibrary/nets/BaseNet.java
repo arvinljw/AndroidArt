@@ -13,6 +13,7 @@ import net.arvin.afbaselibrary.utils.CertificateUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.ParameterizedType;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -37,10 +38,13 @@ public abstract class BaseNet<T> {
     private Converter.Factory converterFactory;
     private CallAdapter.Factory rxJavaCallAdapterFactory;
 
+    @SuppressWarnings("unchecked")
     protected BaseNet() {
         converterFactory = GsonConverterFactory.create();
         rxJavaCallAdapterFactory = RxJavaCallAdapterFactory.create();
-        clazz = getApiClazz();
+//        clazz = getApiClazz();
+        clazz = (Class <T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+
     }
 
     public T getApi() {
@@ -140,7 +144,7 @@ public abstract class BaseNet<T> {
         Glide.get(getContext()).register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(okHttpClient));
     }
 
-    protected abstract Class<T> getApiClazz();
+//    protected abstract Class<T> getApiClazz();
 
     protected abstract String getBaseUrl();
 

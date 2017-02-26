@@ -47,10 +47,30 @@
 
             <include layout="@layout/ui_layout_divider" />
 
+            <!--<TextView-->
+            <!--android:id="@+id/tv_handler"-->
+            <!--style="@style/main_text"-->
+            <!--android:text="消息机制" />-->
+            <!--<include layout="@layout/ui_layout_divider" />-->
+
             <TextView
-                android:id="@+id/tv_handler"
+                android:id="@+id/tv_service"
                 style="@style/main_text"
-                android:text="消息机制" />
+                android:text="服务" />
+
+            <include layout="@layout/ui_layout_divider" />
+
+            <TextView
+                android:id="@+id/tv_broadcast"
+                style="@style/main_text"
+                android:text="广播" />
+
+            <include layout="@layout/ui_layout_divider" />
+
+            <TextView
+                android:id="@+id/tv_provider"
+                style="@style/main_text"
+                android:text="内容提供者" />
 
 
         </LinearLayout>

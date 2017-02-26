@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_default">
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入姓名"
+            android:textColor="@color/black_normal"
+            android:textColorHint="@color/black_hint"
+            android:textSize="@dimen/txt_normal_content" />
+
+
+        <EditText
+            android:id="@+id/ed_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入年龄"
+            android:inputType="number"
+            android:textColor="@color/black_normal"
+            android:textColorHint="@color/black_hint"
+            android:textSize="@dimen/txt_normal_content" />
+
+        <TextView
+            android:id="@+id/tv_insert"
+            style="@style/main_text"
+            android:layout_marginTop="@dimen/spacing_twelve"
+            android:text="添加" />
+
+    </LinearLayout>
+</LinearLayout>

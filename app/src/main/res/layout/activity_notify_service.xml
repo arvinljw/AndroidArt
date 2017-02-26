@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_header" />
+
+    <TextView
+        android:id="@+id/tv_start"
+        style="@style/main_text"
+        android:text="开启前台服务" />
+
+    <include layout="@layout/ui_layout_divider" />
+
+    <TextView
+        android:id="@+id/tv_stop"
+        style="@style/main_text"
+        android:text="停止前台服务" />
+
+</LinearLayout>

@@ -70,16 +70,16 @@ public class AnimActivity extends BaseSwipeBackActivity {
             colorAnim.setDuration(2000);
             colorAnim.setEvaluator(new ArgbEvaluator());//颜色变化推荐使用这个插值器
             colorAnim.setRepeatCount(ValueAnimator.INFINITE);
-            colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+            colorAnim.setRepeatMode(ValueAnimator.REVERSE);//默认是RESTART
 
             ObjectAnimator translationY = ObjectAnimator.ofFloat(vChangeBg, "translationY", vSquare.getHeight());
             translationY.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-
                 }
             });
             translationY.setRepeatCount(ValueAnimator.INFINITE);
+            translationY.setRepeatMode(ValueAnimator.REVERSE);
 
             bgAndTransYSet = new AnimatorSet();
             bgAndTransYSet.addListener(new AnimListener());
@@ -94,7 +94,7 @@ public class AnimActivity extends BaseSwipeBackActivity {
     public void onWidthChange() {
         widthWrapper = new ViewWidthWrapper(vWidthChange);
         if (widthAnim == null) {
-            widthAnim = ObjectAnimator.ofInt(widthWrapper, "width", 2 * widthWrapper.getWidth());
+            widthAnim = ObjectAnimator.ofInt(widthWrapper, "width", ScreenUtil.sp2px(80));
             widthAnim.setRepeatCount(ValueAnimator.INFINITE);
             widthAnim.setRepeatMode(ValueAnimator.REVERSE);
         }
@@ -113,31 +113,31 @@ public class AnimActivity extends BaseSwipeBackActivity {
         }
         if (widthAnim != null) {
             widthAnim.cancel();
-            ObjectAnimator.ofInt(widthWrapper, "width", widthWrapper.getWidth()).start();
+            ObjectAnimator.ofInt(widthWrapper, "width", ScreenUtil.dp2px(40)).start();
         }
     }
 
-public class AnimListener implements Animator.AnimatorListener{
+    public class AnimListener implements Animator.AnimatorListener {
 
-    @Override
-    public void onAnimationStart(Animator animation) {
+        @Override
+        public void onAnimationStart(Animator animation) {
 
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+
+        }
     }
-
-    @Override
-    public void onAnimationEnd(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationCancel(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animator animation) {
-
-    }
-}
 
 }

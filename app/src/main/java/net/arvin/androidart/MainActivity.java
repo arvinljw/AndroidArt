@@ -1,15 +1,17 @@
 package net.arvin.androidart;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import net.arvin.afbaselibrary.uis.activities.BaseHeaderActivity;
 import net.arvin.androidart.anim.AnimActivity;
+import net.arvin.androidart.broadcast.BroadcastActivity;
+import net.arvin.androidart.gen.DaoSession;
 import net.arvin.androidart.handler.HandlerActivity;
 import net.arvin.androidart.intent.IntentActivity;
 import net.arvin.androidart.multiProcess.ProcessActivity;
+import net.arvin.androidart.provider.ProviderActivity;
+import net.arvin.androidart.service.ServiceActivity;
 import net.arvin.androidart.toast.ToastActivity;
 
 import butterknife.OnClick;
@@ -52,6 +54,7 @@ public class MainActivity extends BaseHeaderActivity {
         Bundle bundle = new Bundle();
         bundle.putInt(ProcessActivity.KEY_1, App.count);
         startActivity(ProcessActivity.class, bundle);
+
     }
 
     @OnClick(R.id.tv_anim)
@@ -59,9 +62,24 @@ public class MainActivity extends BaseHeaderActivity {
         startActivity(AnimActivity.class);
     }
 
-    @OnClick(R.id.tv_handler)
-    public void toHandler() {
-        startActivity(HandlerActivity.class);
+//    @OnClick(R.id.tv_handler)
+//    public void toHandler() {
+//        startActivity(HandlerActivity.class);
+//    }
+
+    @OnClick(R.id.tv_service)
+    public void toService() {
+        startActivity(ServiceActivity.class);
+    }
+
+    @OnClick(R.id.tv_broadcast)
+    public void toBroadcast() {
+        startActivity(BroadcastActivity.class);
+    }
+
+    @OnClick(R.id.tv_provider)
+    public void toProvider() {
+        startActivity(ProviderActivity.class);
     }
 
     /**

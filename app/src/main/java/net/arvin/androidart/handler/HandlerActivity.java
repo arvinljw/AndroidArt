@@ -1,9 +1,7 @@
 package net.arvin.androidart.handler;
 
 import android.os.Bundle;
-import android.os.Looper;
 import android.os.Message;
-import android.os.MessageQueue;
 
 import net.arvin.afbaselibrary.listeners.IWeakHandler;
 import net.arvin.afbaselibrary.uis.activities.BaseSwipeBackActivity;
@@ -30,14 +28,14 @@ public class HandlerActivity extends BaseSwipeBackActivity implements IWeakHandl
     @Override
     protected void initViews(Bundle savedInstanceState) {
         mHandler = new WeakHandler(this);
-        mHandler.sendEmptyMessageDelayed(0,1000);
+        mHandler.sendEmptyMessageDelayed(0, 1000);
 
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 showToast("post呵呵");
             }
-        },3000);
+        }, 3000);
     }
 
     @Override

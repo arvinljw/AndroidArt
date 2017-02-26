@@ -41,7 +41,5 @@ dependencies {
     compile 'com.jakewharton:butterknife-compiler:8.4.0'
     //日志
     compile 'com.orhanobut:logger:1.15'
-    //数据库
-    compile 'de.greenrobot:greendao:2.1.0'
 //    compile 'com.umeng.analytics:analytics:latest.integration'
 }

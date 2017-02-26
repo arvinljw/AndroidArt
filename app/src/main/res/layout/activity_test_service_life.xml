@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_header" />
+
+    <TextView
+        android:id="@+id/tv_start"
+        style="@style/main_text"
+        android:text="启动一个Service" />
+
+    <include layout="@layout/ui_layout_divider" />
+    <TextView
+        android:id="@+id/tv_stop"
+        style="@style/main_text"
+        android:text="停止一个Service" />
+
+    <include layout="@layout/ui_layout_divider" />
+
+    <TextView
+        android:id="@+id/tv_bind"
+        style="@style/main_text"
+        android:text="绑定一个Service" />
+    <include layout="@layout/ui_layout_divider" />
+
+    <TextView
+        android:id="@+id/tv_unbind"
+        style="@style/main_text"
+        android:text="解绑一个Service" />
+
+    <include layout="@layout/ui_layout_divider" />
+
+    <TextView
+        android:id="@+id/tv_open"
+        style="@style/main_text"
+        android:text="再打开一个调试界面" />
+
+</LinearLayout>

@@ -78,8 +78,34 @@
 
         <!--属性动画-->
         <activity android:name=".anim.AnimActivity" />　
+
         <!--消息机制-->
         <activity android:name=".handler.HandlerActivity" />　
+
+        <!--服务-->
+        <service android:name=".service.LifeService" />
+        <service android:name=".service.ForegroundService" />
+
+        <activity android:name=".service.ServiceActivity" />
+        <activity android:name=".service.TestServiceLifeActivity" />
+        <activity android:name=".service.ForegroundServiceActivity" />
+
+        <!--广播-->
+        <activity android:name=".broadcast.BroadcastActivity" />
+
+        <receiver android:name=".broadcast.StaticReceiver">
+            <intent-filter>
+                <action android:name="net.arvin.androidart.broadcast.static" />
+            </intent-filter>
+        </receiver>
+
+        <!--内容提供者-->
+        <provider
+            android:name=".provider.UserProvider"
+            android:authorities="net.arvin.androidart" />
+
+        <activity android:name=".provider.ProviderActivity" />
+        <activity android:name=".provider.AddUserActivity" />
 
     </application>
 
