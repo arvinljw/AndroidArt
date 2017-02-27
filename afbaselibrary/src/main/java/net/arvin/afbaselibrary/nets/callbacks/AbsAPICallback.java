@@ -70,18 +70,18 @@ public abstract class AbsAPICallback<T> extends Subscriber<T> {
     }
 
     private void resultError(ResultException e) {
-        if (e.getErrCode() == ApiException.RE_LOGIN) {
-            try {
-                Context currentActivity = ActivityUtil.getCurrentActivity();
-                if (currentActivity != null) {
-                    Intent intent = new Intent(currentActivity, Class.forName("com.kingyon.onehouse.uis.activities.LoginActivity"));
-                    currentActivity.startActivity(intent);
-                    Toast.makeText(currentActivity, "请重新登录", Toast.LENGTH_SHORT).show();
-                }
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
+//        if (e.getErrCode() == ApiException.RE_LOGIN) {
+//            try {
+//                Context currentActivity = ActivityUtil.getCurrentActivity();
+//                if (currentActivity != null) {
+//                    Intent intent = new Intent(currentActivity, Class.forName("登录界面的包名.LoginActivity"));
+//                    currentActivity.startActivity(intent);
+//                    Toast.makeText(currentActivity, "请重新登录", Toast.LENGTH_SHORT).show();
+//                }
+//            } catch (Exception e1) {
+//                e1.printStackTrace();
+//            }
+//        }
     }
 
     /**
