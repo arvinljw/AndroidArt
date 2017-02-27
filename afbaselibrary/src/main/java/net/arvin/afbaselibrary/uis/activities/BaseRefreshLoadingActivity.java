@@ -26,7 +26,8 @@ import java.util.List;
  */
 public abstract class BaseRefreshLoadingActivity<T> extends BaseSwipeBackActivity implements SwipeRefreshHelper.OnSwipeRefreshListener,
         OnLoadMoreListener, MultiItemTypeAdapter.OnItemClickListener<T> {
-    protected final int FIRST_PAGE = 0;
+    protected final int FIRST_PAGE = 1;
+    protected final int DEFAULT_SIZE = 15;
     protected SwipeRefreshHelper mSwipeRefreshHelper;
     protected SwipeRefreshLayout mLayoutRefresh;
     protected RecyclerView mRecyclerView;
@@ -126,7 +127,7 @@ public abstract class BaseRefreshLoadingActivity<T> extends BaseSwipeBackActivit
         }
         mAdapter.notifyDataSetChanged();
         mSwipeRefreshHelper.refreshComplete();
-        mSwipeRefreshHelper.setLoadMoreEnable(loadSuccess && mItems.size() >= 15);
+        mSwipeRefreshHelper.setLoadMoreEnable(loadSuccess && mItems.size() >= DEFAULT_SIZE);
         if (mCurrPage > FIRST_PAGE) {
             mSwipeRefreshHelper.loadMoreComplete(true);
         }

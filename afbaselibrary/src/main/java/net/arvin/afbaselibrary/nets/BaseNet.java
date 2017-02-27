@@ -35,15 +35,15 @@ public abstract class BaseNet<T> {
     private String token;
     private String deviceId;
 
-    private Converter.Factory converterFactory;
-    private CallAdapter.Factory rxJavaCallAdapterFactory;
+    protected Converter.Factory converterFactory;
+    protected CallAdapter.Factory rxJavaCallAdapterFactory;
 
     @SuppressWarnings("unchecked")
     protected BaseNet() {
         converterFactory = GsonConverterFactory.create();
         rxJavaCallAdapterFactory = RxJavaCallAdapterFactory.create();
-//        clazz = getApiClazz();
-        clazz = (Class <T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+        clazz = (Class<T>) ((ParameterizedType) getClass()
+                .getGenericSuperclass()).getActualTypeArguments()[0];
 
     }
 
@@ -89,6 +89,9 @@ public abstract class BaseNet<T> {
             });
             if (isNeedHttps()) {
                 try {
+                    if (getContext() == null) {
+                        throw new IllegalArgumentException("Uses custom https' api have to override getContext() Method");
+                    }
                     builder.sslSocketFactory(CertificateUtil.setCertificates(getContext(), getCertificateNames()))
                             .hostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
                 } catch (Exception e) {
@@ -99,18 +102,18 @@ public abstract class BaseNet<T> {
         }
     }
 
-
-    protected void dealResponse(Response response) {
-    }
-
     /**
-     * 若需要使用https请求,请设置证书信息 getCertificateNames()
+     * 若需要使用https请求,请设置证书信息 getCertificateNames()和getContext()
      */
     protected boolean isNeedHttps() {
         return false;
     }
 
     protected String[] getCertificateNames() {
+        return null;
+    }
+
+    protected Context getContext() {
         return null;
     }
 
@@ -140,14 +143,16 @@ public abstract class BaseNet<T> {
         return request;
     }
 
+    protected void dealResponse(Response response) {
+    }
+
+    /**
+     * 让Glide支持https
+     */
     public void registerHttps() {
         Glide.get(getContext()).register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(okHttpClient));
     }
 
-//    protected abstract Class<T> getApiClazz();
-
     protected abstract String getBaseUrl();
-
-    protected abstract Context getContext();
 
 }

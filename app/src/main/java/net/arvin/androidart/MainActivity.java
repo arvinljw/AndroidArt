@@ -11,6 +11,7 @@ import net.arvin.androidart.handler.HandlerActivity;
 import net.arvin.androidart.intent.IntentActivity;
 import net.arvin.androidart.multiProcess.ProcessActivity;
 import net.arvin.androidart.provider.ProviderActivity;
+import net.arvin.androidart.retrofit.GithubReposActivity;
 import net.arvin.androidart.service.ServiceActivity;
 import net.arvin.androidart.toast.ToastActivity;
 
@@ -80,6 +81,11 @@ public class MainActivity extends BaseHeaderActivity {
     @OnClick(R.id.tv_provider)
     public void toProvider() {
         startActivity(ProviderActivity.class);
+    }
+
+    @OnClick(R.id.tv_retrofit)
+    public void toRetrofit() {
+        startActivity(GithubReposActivity.class);
     }
 
     /**

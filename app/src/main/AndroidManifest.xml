@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.arvin.androidart">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -106,6 +108,9 @@
 
         <activity android:name=".provider.ProviderActivity" />
         <activity android:name=".provider.AddUserActivity" />
+
+        <!--retrofit-->
+        <activity android:name=".retrofit.GithubReposActivity" />
 
     </application>
 

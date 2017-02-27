@@ -43,7 +43,6 @@ public abstract class AbsAPICallback<T> extends Subscriber<T> {
 
             error(e, ((HttpException) e).code(), networkMsg);
 
-
         } else if (e instanceof ResultException) {//服务器返回的错误
 
             ResultException resultException = (ResultException) e;
