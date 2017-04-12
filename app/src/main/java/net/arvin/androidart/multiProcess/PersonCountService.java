@@ -6,12 +6,12 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
+import net.arvin.androidart.aidl.IOnNewPersonIn;
 import net.arvin.androidart.aidl.IPersonCount;
 import net.arvin.androidart.aidl.Person;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * created by arvin on 17/2/15 22:48
@@ -39,6 +39,16 @@ public class PersonCountService extends Service {
         @Override
         public List<Person> getPersons() throws RemoteException {
             return persons;
+        }
+
+        @Override
+        public void registerListener(IOnNewPersonIn listener) throws RemoteException {
+
+        }
+
+        @Override
+        public void unregisterListener(IOnNewPersonIn listener) throws RemoteException {
+
         }
     };
 

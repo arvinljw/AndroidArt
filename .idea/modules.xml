@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/afbaselibrary/afbaselibrary.iml" filepath="$PROJECT_DIR$/afbaselibrary/afbaselibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greendao/greendao.iml" filepath="$PROJECT_DIR$/greendao/greendao.iml" />
     </modules>
   </component>
 </project>

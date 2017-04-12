@@ -11,8 +11,8 @@ import net.arvin.afbaselibrary.nets.callbacks.AbsAPICallback;
 import net.arvin.afbaselibrary.nets.exceptions.ApiException;
 import net.arvin.afbaselibrary.uis.activities.BaseSwipeBackActivity;
 import net.arvin.androidart.R;
-import net.arvin.androidart.entities.User;
-import net.arvin.androidart.gen.UserDao;
+import net.arvin.greendao.entities.User;
+import net.arvin.greendao.gen.UserDao;
 
 import butterknife.BindView;
 import butterknife.OnClick;

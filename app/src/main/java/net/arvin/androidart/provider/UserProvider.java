@@ -11,8 +11,8 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
-import net.arvin.androidart.gen.DaoMaster;
-import net.arvin.androidart.gen.UserDao;
+import net.arvin.greendao.gen.DaoMaster;
+import net.arvin.greendao.gen.UserDao;
 
 /**
  * created by arvin on 17/2/25 15:10

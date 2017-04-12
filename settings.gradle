@@ -1,1 +1,1 @@
-include ':app', ':afbaselibrary', ':aidlclient'
+include ':app', ':afbaselibrary', ':aidlclient', ':greendao'

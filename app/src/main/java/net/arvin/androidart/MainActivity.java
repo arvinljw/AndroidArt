@@ -1,14 +1,14 @@
 package net.arvin.androidart;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
 import net.arvin.afbaselibrary.uis.activities.BaseHeaderActivity;
 import net.arvin.androidart.anim.AnimActivity;
 import net.arvin.androidart.broadcast.BroadcastActivity;
-import net.arvin.androidart.gen.DaoSession;
-import net.arvin.androidart.handler.HandlerActivity;
 import net.arvin.androidart.intent.IntentActivity;
+import net.arvin.androidart.jni.JniActivity;
 import net.arvin.androidart.multiProcess.ProcessActivity;
 import net.arvin.androidart.provider.ProviderActivity;
 import net.arvin.androidart.retrofit.GithubReposActivity;
@@ -55,7 +55,11 @@ public class MainActivity extends BaseHeaderActivity {
         Bundle bundle = new Bundle();
         bundle.putInt(ProcessActivity.KEY_1, App.count);
         startActivity(ProcessActivity.class, bundle);
+    }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     @OnClick(R.id.tv_anim)
@@ -86,6 +90,11 @@ public class MainActivity extends BaseHeaderActivity {
     @OnClick(R.id.tv_retrofit)
     public void toRetrofit() {
         startActivity(GithubReposActivity.class);
+    }
+
+    @OnClick(R.id.tv_jni)
+    public void toJNI() {
+        startActivity(JniActivity.class);
     }
 
     /**

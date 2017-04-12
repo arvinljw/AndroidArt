@@ -1,12 +1,10 @@
 package net.arvin.androidart.provider;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,13 +12,12 @@ import android.view.View;
 import net.arvin.afbaselibrary.nets.callbacks.AbsAPICallback;
 import net.arvin.afbaselibrary.nets.exceptions.ApiException;
 import net.arvin.afbaselibrary.uis.activities.BaseRefreshLoadingActivity;
-import net.arvin.afbaselibrary.uis.activities.BaseSwipeBackActivity;
 import net.arvin.afbaselibrary.uis.adapters.BaseAdapter;
 import net.arvin.afbaselibrary.uis.adapters.MultiItemTypeAdapter;
 import net.arvin.afbaselibrary.uis.adapters.holders.CommonHolder;
 import net.arvin.androidart.R;
-import net.arvin.androidart.entities.User;
-import net.arvin.androidart.gen.UserDao;
+import net.arvin.greendao.entities.User;
+import net.arvin.greendao.gen.UserDao;
 
 import java.util.ArrayList;
 import java.util.List;

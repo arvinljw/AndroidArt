@@ -1,4 +1,4 @@
-package net.arvin.androidart.gen;
+package net.arvin.greendao.gen;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

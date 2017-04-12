@@ -1,41 +1,28 @@
-package net.arvin.androidart.entities;
+package net.arvin.greendao.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
-
-import retrofit2.http.Field;
+import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * created by arvin on 17/2/25 18:27
+ * created by arvin on 17/3/2 12:51
  * email：1035407623@qq.com
  */
 @Entity
 public class User implements Parcelable {
     @Id(autoincrement = true)
-    private Long id;
+    private long id;
     private String name;
     private int age;
 
-    @Generated(hash = 1309193360)
-    public User(Long id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    @Generated(hash = 586692638)
-    public User() {
-    }
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -62,15 +49,25 @@ public class User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(this.id);
+        dest.writeLong(this.id);
         dest.writeString(this.name);
         dest.writeInt(this.age);
     }
 
+    public User() {
+    }
+
     protected User(Parcel in) {
-        this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.id = in.readLong();
         this.name = in.readString();
         this.age = in.readInt();
+    }
+
+    @Generated(hash = 446251977)
+    public User(long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {

@@ -38,10 +38,20 @@ public class Person implements Parcelable {
         dest.writeInt(this.age);
     }
 
+
     public Person() {
     }
 
     protected Person(Parcel in) {
+        this.name = in.readString();
+        this.age = in.readInt();
+    }
+
+    /**
+     *为了支持out数据流向需要重写该方法
+     * @param in
+     */
+    void readFromParcel(Parcel in){
         this.name = in.readString();
         this.age = in.readInt();
     }

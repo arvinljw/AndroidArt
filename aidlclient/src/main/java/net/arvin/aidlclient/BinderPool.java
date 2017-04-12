@@ -16,7 +16,6 @@ import net.arvin.androidart.aidl.IBinderPool;
  */
 public class BinderPool {
     private static final String TAG = "BinderPool";
-    public static final int BINDER_NONE = -1;
     public static final int BINDER_COMPUTE = 0;
     public static final int BINDER_PERSON_COUNT = 1;
 
@@ -48,13 +47,6 @@ public class BinderPool {
                 Context.BIND_AUTO_CREATE);
     }
 
-    /**
-     * query binder by binderCode from binder pool
-     *
-     * @param binderCode the unique token of binder
-     * @return binder who's token is binderCode<br>
-     * return null when not found or BinderPoolService died.
-     */
     public IBinder queryBinder(int binderCode) {
         IBinder binder = null;
         try {
@@ -71,7 +63,6 @@ public class BinderPool {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            // ignored.
         }
 
         @Override

@@ -71,12 +71,20 @@
                 android:id="@+id/tv_provider"
                 style="@style/main_text"
                 android:text="内容提供者" />
+
             <include layout="@layout/ui_layout_divider" />
 
             <TextView
                 android:id="@+id/tv_retrofit"
                 style="@style/main_text"
                 android:text="Retrofit Demo" />
+
+            <include layout="@layout/ui_layout_divider" />
+
+            <TextView
+                android:id="@+id/tv_jni"
+                style="@style/main_text"
+                android:text="JNI Demo" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

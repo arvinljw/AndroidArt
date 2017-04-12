@@ -55,6 +55,10 @@ public class Person implements Parcelable {
     }
 
     protected Person(Parcel in) {
+        readFromParcel(in);
+    }
+
+    public void readFromParcel(Parcel in){
         this.name = in.readString();
         this.age = in.readInt();
     }

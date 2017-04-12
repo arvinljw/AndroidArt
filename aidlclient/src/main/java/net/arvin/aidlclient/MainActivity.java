@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Message;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import net.arvin.afbaselibrary.listeners.IWeakHandler;
 import net.arvin.afbaselibrary.uis.activities.BaseActivity;
+import net.arvin.afbaselibrary.utils.WeakHandler;
 import net.arvin.androidart.aidl.IIntegerAdd;
+import net.arvin.androidart.aidl.IOnNewPersonIn;
 import net.arvin.androidart.aidl.IPersonCount;
 import net.arvin.androidart.aidl.Person;
 
@@ -25,7 +29,7 @@ import butterknife.OnClick;
  * created by arvin on 17/2/14 21:47
  * email：1035407623@qq.com
  */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements IWeakHandler {
     @BindView(R.id.et_num1)
     EditText etNum1;
     @BindView(R.id.et_num2)
@@ -74,6 +78,18 @@ public class MainActivity extends BaseActivity {
     };
     private BinderPool mBinderPool;
 
+    private IOnNewPersonIn.Stub onNewPersonIn = new IOnNewPersonIn.Stub() {
+        @Override
+        public void onNewPersonIn(Person newPerson) throws RemoteException {
+            Message message = mHandler.obtainMessage();
+            message.what = 0;
+            message.obj = newPerson;
+            mHandler.sendMessage(message);
+        }
+    };
+
+    private WeakHandler mHandler;
+
     @Override
     public int getContentViewId() {
         return R.layout.activity_main;
@@ -84,6 +100,7 @@ public class MainActivity extends BaseActivity {
         mBinderPool = BinderPool.getInstance(this);
         bind();
         bindPersonCount();
+        mHandler = new WeakHandler(this);
     }
 
 
@@ -103,6 +120,13 @@ public class MainActivity extends BaseActivity {
 //        bindService(intent, connPerson, Context.BIND_AUTO_CREATE);
 
         iPersonCount = IPersonCount.Stub.asInterface(mBinderPool.queryBinder(BinderPool.BINDER_PERSON_COUNT));
+        try {
+            if (iPersonCount != null) {
+                iPersonCount.registerListener(onNewPersonIn);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -180,7 +204,25 @@ public class MainActivity extends BaseActivity {
 
     protected void onDestroy() {
         super.onDestroy();
+        try {
+            if (iPersonCount != null) {
+                iPersonCount.unregisterListener(onNewPersonIn);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        mBinderPool = null;
 //        unbindService(conn);
 //        unbindService(connPerson);
+    }
+
+
+    @Override
+    public void handleMessage(Message msg) {
+        if (msg.what == 0) {
+            Person person = (Person) msg.obj;
+            edAge.setText(person.getAge()+"");
+            edName.setText(person.getName());
+        }
     }
 }
