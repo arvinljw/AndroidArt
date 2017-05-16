@@ -3,7 +3,7 @@
 本项目包括两部分
 
 * [个人博客](https://arvinljw.github.io)中的demo
-* 快速开发的基础框架的使用（具体待完善）
+* 开发框架的介绍我这边已经换了个项目去整理了，与之前的也有些调整，项目地址：[AFBaseLibrary](https://github.com/arvinljw/AFBaseLibrary)
 
 ## 个人博客：
 
@@ -22,17 +22,7 @@
 
 ## 基础框架
 
-**注：基础框架的使用之后会再抽时间来整理**
-
-这里先简单的介绍一下包含哪些内容：
-
-* 封装Retrofit、rxjava网络请求；
-* 封装多个Activity，里边包含权限申请、标题管理、右滑返回、上拉加载和下拉刷新、带Tab＋ViewPager；
-* 封装通用Adapter，多类型adapter；
-* 封装厂用的工具类，图片加载，文件处理，屏幕尺寸转换、时间处理、解决内存泄露的Handler；
-* 定义Material Design的尺寸和黑白的颜色；
-
-总之这个框架在使用过程中还是能加快开发进度的。
+[框架介绍](https://github.com/arvinljw/AFBaseLibrary/blob/master/README.md)
 
 如果有什么技术性意见也欢迎指出。
 
